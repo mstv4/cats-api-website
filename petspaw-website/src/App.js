@@ -15,6 +15,7 @@ function App() {
       <BrowserRouter>
         <div className="home-container">
           <NavBar />
+          <div className="main-container">
           <Routes>
             <Route path="/voting" element={<Voting />} />
             <Route path="/breeds" element={<Breeds />} />
@@ -23,6 +24,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="*" element={<Navigate to="/not-found" />} />
           </Routes>
+          </div>
         </div>
       </BrowserRouter>
     </div>
