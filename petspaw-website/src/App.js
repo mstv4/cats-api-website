@@ -5,6 +5,7 @@ import Voting from "./components/Voting";
 import Breeds from "./components/Breeds";
 import Gallery from "./components/Gallery";
 import NotFound from "./components/NotFound";
+import NavBar from "./components/NavBar";
 
 import "./styles/App.css";
 
@@ -12,7 +13,8 @@ function App() {
   return (
     <div className="wrapper">
       <BrowserRouter>
-        <div>
+        <div className="home-container">
+          <NavBar />
           <Routes>
             <Route path="/voting" element={<Voting />} />
             <Route path="/breeds" element={<Breeds />} />
