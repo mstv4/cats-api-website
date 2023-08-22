@@ -27,6 +27,16 @@
   margin-left: 147px;
   margin-top: 30px;
 }
+@media screen and (min-width: 1920px) {
+  .home-container .home-left-block {
+    margin-left: 347px;
+  }
+}
+@media screen and (max-width: 1439px) {
+  .home-container .home-left-block {
+    margin-left: 47px;
+  }
+}
 .home-container .home-left-block .home-main-logo {
   width: 104px;
   height: 24px;

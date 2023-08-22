@@ -11,6 +11,14 @@
     margin-left: 147px;
     margin-top: 30px;
 
+    @media screen and (min-width: 1920px) {
+      margin-left: 347px;
+    }
+
+    @media screen and (max-width: 1439px) {
+      margin-left: 47px;
+    }
+
     .home-main-logo {
       width: 104px;
       height: 24px;
