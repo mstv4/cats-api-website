@@ -1,3 +1,7 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setSearchQuery } from "../features/searchSlice";
+
 import SearchLogo from "../media/svg/SearchLogo";
 import LikeLogo from "../media/svg/LikeLogo";
 import FavLogo from "../media/svg/FavLogo";
@@ -6,11 +10,19 @@ import DislikeLogo from "../media/svg/DislikeLogo";
 import "../styles/App.css";
 
 const SearchFavBar = () => {
+  const [search, setSearch] = useState("");
+  const dispatch = useDispatch();
+
   return (
     <div className="search-fav-bar">
       <div className="search-container">
-        <input type="text" placeholder="Search for breeds by name" />
-        <button>
+        <input
+          type="text"
+          placeholder="Search for breeds by name"
+          onChange={(e) => setSearch(e.target.value)}
+          value={search}
+        />
+        <button onClick={() => dispatch(setSearchQuery(search))}>
           <div className="search-logo-button">
             <SearchLogo />
           </div>
