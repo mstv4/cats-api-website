@@ -16,14 +16,14 @@ function App() {
         <div className="home-container">
           <NavBar />
           <div className="main-container">
-          <Routes>
-            <Route path="/voting" element={<Voting />} />
-            <Route path="/breeds" element={<Breeds />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/not-found" element={<NotFound />} />
-            <Route path="/" element={<Home />} />
-            <Route path="*" element={<Navigate to="/not-found" />} />
-          </Routes>
+            <Routes>
+              <Route path="/voting" element={<Voting />} />
+              <Route path="/breeds" element={<Breeds />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/not-found" element={<NotFound />} />
+              <Route path="/" element={<Home />} />
+              <Route path="*" element={<Navigate to="/not-found" />} />
+            </Routes>
           </div>
         </div>
       </BrowserRouter>

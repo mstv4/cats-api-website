@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import MainLogo from "../media/svg/MainLogo.svg";
+import MainLogo from "../media/svg/MainLogo";
 import VoteTable from "../media/img/vote-table.png";
 import PetBreeds from "../media/img/pet-breeds.png";
 import ImageSearch from "../media/img/image-search.png";
@@ -9,7 +9,9 @@ const NavBar = () => {
   return (
     <div className="home-left-block">
       <Link to="/">
-        <img src={MainLogo} className="home-main-logo" alt="logo main" />
+        <div className="home-main-logo">
+          <MainLogo />
+        </div>
       </Link>
       <h1>Hi!👋</h1>
       <h3>Welcome to MacPaw Bootcamp 2023</h3>

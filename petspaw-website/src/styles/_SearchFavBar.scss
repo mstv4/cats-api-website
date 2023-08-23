@@ -1,0 +1,130 @@
+.search-fav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30px;
+
+  .search-container {
+    position: relative;
+
+    input {
+      appearance: none;
+      padding: 15px 0 15px 20px;
+      width: 470px;
+      height: 60px;
+      border-radius: 20px;
+      background-color: #fff;
+      border: none;
+      color: #1d1d1d;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 30px;
+      outline: solid #fff;
+      outline-width: 2px;
+      transition: outline 0.5s;
+    }
+
+    input::placeholder {
+      color: #8c8c8c;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 30px;
+    }
+
+    input:hover {
+      outline: solid #fbe0dc;
+      outline-width: 2px;
+    }
+
+    input:focus {
+      outline: solid #ff868e;
+      outline-width: 2px;
+    }
+
+    input:hover::placeholder,
+    input:focus::placeholder {
+      color: #fff;
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      border-radius: 10px;
+      background: #fbe0dc;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      transition: background-color 0.5s;
+
+      .search-logo-button {
+        width: 20px;
+        height: 20px;
+
+        #SearchLogo {
+          transition: fill 0.5s;
+        }
+      }
+    }
+
+    button:hover {
+      background-color: #ff868e;
+      cursor: pointer;
+
+      .search-logo-button {
+        #SearchLogo {
+          fill: #ffffff;
+        }
+      }
+    }
+  }
+
+  .fav-buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: 10px;
+
+    button {
+      width: 60px;
+      height: 60px;
+      border-radius: 20px;
+      background: #fff;
+      border: none;
+      transition: background-color 0.2s;
+
+      .fav-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        #LikeLogo,
+        #FavLogo,
+        #DislikeLogo {
+          transition: fill 0.2s;
+        }
+      }
+    }
+
+    button:hover {
+      background-color: #fbe0dc;
+      cursor: pointer;
+    }
+
+    button:active {
+      background-color: #ff868e;
+      cursor: pointer;
+
+      .fav-button {
+        #LikeLogo,
+        #FavLogo,
+        #DislikeLogo {
+          fill: #ffffff;
+        }
+      }
+    }
+  }
+}
