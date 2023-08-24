@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_KEY = 'live_iCy7bYnZSV1UODnOTmfGQPVN2CbjBt4z15F4BYwDr1ZUbBracbNR0mh3ASssomON';
-const BASE_URL = 'https://api.thecatapi.com'
+const API_KEY = "live_iCy7bYnZSV1UODnOTmfGQPVN2CbjBt4z15F4BYwDr1ZUbBracbNR0mh3ASssomON";
+const BASE_URL = "https://api.thecatapi.com";
 
 const initialState = {
   items: [],
@@ -10,7 +10,7 @@ const initialState = {
 };
 
 export const imagesFetch = createAsyncThunk("images/imagesFetch", async () => {
-  const response = await axios.get(`${BASE_URL}/v1/images/search?limit=15&api_key=${API_KEY}`);
+  const response = await axios.get(`${BASE_URL}/v1/images/search?api_key=${API_KEY}`);
   return response?.data;
 });
 

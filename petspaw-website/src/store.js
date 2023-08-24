@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import searchReducer from "./features/searchSlice";
-import { imagesFetch } from "./features/imagesSlice";
+import imagesReducer, { imagesFetch } from "./features/imagesSlice";
 
 const store = configureStore({
   reducer: {
     search: searchReducer,
-    images: imagesFetch,
+    images: imagesReducer,
   },
 });
 
