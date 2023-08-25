@@ -1,21 +1,16 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
-import { imagesFetch } from "../features/imagesSlice";
+import { imagesListFetch } from "../features/api";
 
 const ImagesList = () => {
-  const { searchQuery } = useSelector((state) => state.search);
-
   const images = useSelector((state) => state.images.items);
   const status = useSelector((state) => state.images.status);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (searchQuery === "") return;
-
-    dispatch(imagesFetch(searchQuery));
-  }, [searchQuery, dispatch]);
+    dispatch(imagesListFetch());
+  }, [dispatch]);
 
   return (
     <div className="images-container">
@@ -23,13 +18,11 @@ const ImagesList = () => {
       {status === "rejected" && <span className="error-data">Error loading data.</span>}
       {status === "success" && (
         <>
-          <div>
-            {images.map((image, index) => (
-              <div key={index} className="images-list__item">
-                <img src={image.url} alt={image.tags} width={300} />
-              </div>
-            ))}
-          </div>
+          {images.map((image, index) => (
+            <div key={index} className="images-list__item">
+              <img src={image.url} alt={image.tags} width={300} />
+            </div>
+          ))}
         </>
       )}
     </div>
@@ -37,3 +30,37 @@ const ImagesList = () => {
 };
 
 export default ImagesList;
+
+// import { useEffect } from "react";
+// import { useSelector, useDispatch } from "react-redux";
+// import { fetchImagesList } from "../features/imagesListSlice";
+
+// function ImagesList() {
+//   const { searchQuery } = useSelector((state) => state.search);
+
+//   const images = useSelector((state) => state.images);
+
+//   const dispatch = useDispatch();
+
+//   useEffect(() => {
+//     dispatch(
+//       fetchImagesList({
+//         searchQuery,
+//       })
+//     );
+//   }, [searchQuery, dispatch]);
+
+//   return (
+//     <div className="images-container">
+//       <>
+//       {images.items?.map((image, index) => (
+//             <div key={index} className="images-list__item">
+//               <img src={image.url} alt={image.tags} width={300} />
+//             </div>
+//           ))}
+//       </>
+//     </div>
+//   );
+// }
+
+// export default ImagesList;

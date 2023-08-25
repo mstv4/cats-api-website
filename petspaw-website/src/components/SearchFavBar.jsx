@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setSearchQuery } from "../features/searchSlice";
+import { imagesListFetch } from "../features/api";
 
 import SearchLogo from "../media/svg/SearchLogo";
 import LikeLogo from "../media/svg/LikeLogo";
 import FavLogo from "../media/svg/FavLogo";
 import DislikeLogo from "../media/svg/DislikeLogo";
-
-import "../styles/App.css";
 
 const SearchFavBar = () => {
   const [search, setSearch] = useState("");
@@ -22,7 +21,12 @@ const SearchFavBar = () => {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
-        <button onClick={() => dispatch(setSearchQuery(search))}>
+        <button
+          onClick={() => {
+            dispatch(setSearchQuery(search));
+            dispatch(imagesListFetch());
+          }}
+        >
           <div className="search-logo-button">
             <SearchLogo />
           </div>

@@ -1,0 +1,12 @@
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 745px;
+  height: auto;
+  gap: 10px;
+
+  .images-list__item {
+    width: auto;
+    height: auto;
+  }
+}

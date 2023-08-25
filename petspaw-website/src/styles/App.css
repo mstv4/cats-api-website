@@ -396,6 +396,21 @@
   fill: #ffffff;
 }
 
+.images-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 745px;
+  height: auto;
+  gap: 10px;
+}
+.images-container .images-list__item {
+  width: auto;
+  height: auto;
+}
+
 * {
   margin: 0;
   padding: 0;
