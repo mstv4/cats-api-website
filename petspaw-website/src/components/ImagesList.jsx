@@ -6,8 +6,8 @@ import { imagesFetch } from "../features/imagesSlice";
 const ImagesList = () => {
   const { searchQuery } = useSelector((state) => state.search);
 
-  const items = useSelector((state) => state.items.items);
-  const status = useSelector((state) => state.items.status);
+  const images = useSelector((state) => state.images.items);
+  const status = useSelector((state) => state.images.status);
 
   const dispatch = useDispatch();
 
@@ -24,7 +24,7 @@ const ImagesList = () => {
       {status === "success" && (
         <>
           <div>
-            {items.map((image, index) => (
+            {images.map((image, index) => (
               <div key={index} className="images-list__item">
                 <img src={image.url} alt={image.tags} width={300} />
               </div>
