@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-import MainLogo from "../media/svg/MainLogo";
-import VoteTable from "../media/img/vote-table.png";
-import PetBreeds from "../media/img/pet-breeds.png";
-import ImageSearch from "../media/img/image-search.png";
+import MainLogo from "../../media/svg/MainLogo";
+import VoteTable from "../../media/img/vote-table.png";
+import PetBreeds from "../../media/img/pet-breeds.png";
+import ImageSearch from "../../media/img/image-search.png";
 
 const NavBar = () => {
   return (

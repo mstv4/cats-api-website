@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setSearchQuery } from "../features/searchSlice";
-import { imagesListFetch } from "../features/api";
+import { setSearchQuery } from "../../features/Slice/searchSlice";
 
-import SearchLogo from "../media/svg/SearchLogo";
-import LikeLogo from "../media/svg/LikeLogo";
-import FavLogo from "../media/svg/FavLogo";
-import DislikeLogo from "../media/svg/DislikeLogo";
+import SearchLogo from "../../media/svg/SearchLogo";
+import LikeLogo from "../../media/svg/LikeLogo";
+import FavLogo from "../../media/svg/FavLogo";
+import DislikeLogo from "../../media/svg/DislikeLogo";
 
 const SearchFavBar = () => {
   const [search, setSearch] = useState("");
@@ -14,6 +13,8 @@ const SearchFavBar = () => {
 
   return (
     <div className="search-fav-bar">
+      
+      
       <div className="search-container">
         <input
           type="text"
@@ -21,17 +22,20 @@ const SearchFavBar = () => {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
+
         <button
           onClick={() => {
-            dispatch(setSearchQuery(search));
-            dispatch(imagesListFetch());
+            dispatch(setSearchQuery(search));            
           }}
         >
           <div className="search-logo-button">
             <SearchLogo />
           </div>
         </button>
+
       </div>
+
+
       <div className="fav-buttons-container">
         <button>
           <div className="fav-button">

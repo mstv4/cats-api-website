@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
-import Home from "./components/Home";
-import Voting from "./components/Voting";
-import Breeds from "./components/Breeds";
-import Gallery from "./components/Gallery";
-import NotFound from "./components/NotFound";
-import NavBar from "./components/NavBar";
+import Home from "./components/main/Home";
+import Voting from "./components/main/Voting";
+import Breeds from "./components/main/Breeds";
+import Gallery from "./components/main/Gallery";
+import NotFound from "./components/main/NotFound";
+import NavBar from "./components/main/NavBar";
 
 import "./styles/App.css";
 

@@ -1,4 +1,4 @@
-import SearchFavBar from "./SearchFavBar";
+import SearchFavBar from "../parts/SearchFavBar";
 
 const Gallery = () => {
   return (

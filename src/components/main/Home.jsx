@@ -1,4 +1,4 @@
-import GirlAndPet from "../media/img/girl-and-pet.png";
+import GirlAndPet from "../../media/img/girl-and-pet.png";
 
 const Home = () => {
   return (
