@@ -5,7 +5,7 @@ function SelectedBreedImages() {
   const images = useSelector((state) => state.images);
 
   return (
-    <div>
+    <div className="breeds-images">
       {images.map((image) => (
         <img key={image.id} src={image.url} alt="Cat" width={200} />
       ))}

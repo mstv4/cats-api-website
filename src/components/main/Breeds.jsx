@@ -1,14 +1,17 @@
-import SearchFavBar from "../parts/SearchFavBar";
-import BreedSelector from "../parts/BreedSelector";
-import SelectedBreedImages from "../parts/SelectedBreedImages";
 import { useEffect } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 import { setBreeds } from "../../features/Slice/breedsSlice";
 
+import SearchFavBar from "../parts/SearchFavBar";
+import BreedSelector from "../parts/BreedSelector";
+import SelectedBreedImages from "../parts/SelectedBreedImages";
+
+import BackButtonLogo from "../../media/svg/BackButtonLogo";
+
 const Breeds = () => {
-  const dispatch = useDispatch();
   const breeds = useSelector((state) => state.breeds);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function fetchBreeds() {
@@ -24,12 +27,21 @@ const Breeds = () => {
     fetchBreeds();
   }, [dispatch]);
   return (
-    <div>
+    <>
       <SearchFavBar />
-      <h2>Breeds</h2>
-      <BreedSelector breeds={breeds} />
-      <SelectedBreedImages />
-    </div>
+      <div className="breeds-container">
+        <div className="breeds-nav">
+          <button>
+            <div className="back-button">
+              <BackButtonLogo />
+            </div>
+          </button>
+          <p>Breeds</p>
+          <BreedSelector breeds={breeds} />
+        </div>
+        <SelectedBreedImages />
+      </div>
+    </>
   );
 };
 
